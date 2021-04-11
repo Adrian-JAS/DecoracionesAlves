@@ -9,9 +9,7 @@ router.get('/', presupuestosController.list); //Muestra los registros
 router.post('/add', presupuestosController.save);
 router.get('/delete/:id', presupuestosController.delete);
 
-router.get('/create', (req,res) => {
-    res.render('presupuestos_create');
-});
+router.get('/create', presupuestosController.listClients);
 
 router.get('/update/:id', presupuestosController.edit_list);
 router.post('/update/:id', presupuestosController.edit_update);

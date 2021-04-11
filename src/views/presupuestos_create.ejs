@@ -64,9 +64,11 @@
                 <form action="/presupuestos/add" method="POST">
                     <div class="mb-3">
                         <label for="cliente" class="form-label">Cliente</label>
-                        <select  class="form-select" id="cliente" name="cliente" tabindex="1" required>
+                        <select  class="form-select" onchange="valorCliente()" id="cliente" name="cliente" tabindex="1" required>
                             <option>----</option>
-                            <option value=""></option>
+                            <%for(var i=0; i < datos.length; i++){%>
+                                <option value="<%= datos[i].id %>"><%= datos[i].nombre %></option>
+		  	                <%}%>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -129,6 +131,20 @@
     <script type="text/javascript" src="../javascripts/mdbootstrap/mdb.min.js"></script>
     <!-- MDB-KIT Javascript-->
     <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+
+    <script>
+        var global= <%=datos%>;
+        function valorCliente(){
+            var cliente = document.getElementById("cliente").value;
+            if (cliente) {
+                for(var i= 0; i< global[cliente]; i++) {
+                document.getElementById("direccion").value = "global[i].direccion";
+                document.getElementById("telefono").value = "global[i].telefono"; 
+                }
+            }
+
+        }
+    </script>
  
   </body>
  </html>

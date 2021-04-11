@@ -59,4 +59,14 @@ controller.delete = function(req, res, next) {
     });
 };
 
+controller.listClients = function(req, res, next) {
+    req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM clientes', (err, row) => {
+            res.render('presupuestos_create', {
+                datos: row
+            });
+        });
+    });
+};
+
 module.exports = controller;
