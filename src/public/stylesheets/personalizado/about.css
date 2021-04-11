@@ -1,0 +1,233 @@
+.about-img{
+    padding-right: 70px;
+}
+
+.about-img-quienessomos{
+    position: relative;
+    top: 23%;
+}
+
+.about-content{
+    color: #989898;
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 80px;
+}
+
+.about-content h2{
+    font-size: 48px;
+    color: #333333;
+    font-weight: 700;
+    margin: 0 0 25px;
+}
+
+.about-img-mision{
+    position: relative;
+    top: 10%;
+    left: 92%;
+}
+
+.about-content-mision{
+    position: relative;
+    left: -135%;
+}
+
+.about-img-vision{
+    position: relative; 
+    top: -10%; 
+    margin-top: 25%;
+
+}
+
+.about-content-vision{
+    position: relative; 
+    left: 7%;
+}
+
+#team-area{
+    background-color: #FAFAFA;
+}
+
+.single-team img{
+    width: 100%;
+}
+
+.single-team{
+    margin-bottom: 30px;
+}
+.single-team .inner{
+    background: #fff;
+    text-align: center;    
+    color: #989898;
+    font-size: 16px;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.single-team .inner:hover{
+    -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.single-team .team-content{
+    padding: 30px 0;
+}
+.single-team h4{
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-top: 0;
+}
+.single-team .team-social{
+    margin-top: 15px;
+}
+.single-team .team-social a{
+    color: #989898;
+    padding: 5px;
+    margin: 0 10px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.single-team .team-social a:hover{
+    color: #EC5538;
+}
+
+@media(min-width:400px) and (max-width:767px){
+
+    .about-img-quienessomos{
+        position: relative;
+        top: 23%;
+        left: 10%;
+    }
+
+    .about-content{
+        color: #000;
+        font-size: 15px;
+        line-height: 25px;
+        margin-top: 80px;
+    }
+
+    .about-content h2{
+        margin-top: 25%;
+        font-size: 30px;
+        color: #333333;
+        font-weight: 700;
+        text-align: center;
+        
+    }
+
+    .about-img-mision{
+        position: relative;
+        top: 10%;
+        left: 9%;
+        /*margin-top: 10%;*/
+        
+    }
+
+    .about-content-mision{
+        position: relative; 
+        left: 1%;
+        top: -20%;
+
+    }
+
+    .about-img-vision{
+        position: relative; 
+        top: -40%; 
+        left: 9%;
+    }
+
+    .about-content-vision{
+        position: relative; 
+        left: 1%;
+        top:-220%;
+        margin-bottom: -40%;
+    }
+    
+    
+    
+}
+    
+@media(min-width:768px) and (max-width:1023px){
+    .about-content{
+        color: #000;
+        font-size: 15px;
+        line-height: 20px;
+        margin-top: 80px;
+    }
+
+    .about-content h2{
+        font-size: 30px;
+        color: #333333;
+        font-weight: 700;
+        margin: 0 0 25px;
+    }
+    
+    .about-content-vision{
+        position: relative; 
+        left: -5%;
+        top:-10%;
+    }
+
+    .about-img-mision{
+        position: relative;
+        top: 10%;
+        left: 100%;
+        margin-top: 10%;
+        
+    }
+
+    .about-content-mision{
+        position: relative; 
+        left: -145%;
+        top: 5%;
+
+    }
+}
+    
+    
+    
+@media(min-width:1024px) and (max-width:1279px){
+
+    .about-content{
+        color: #000;
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: 80px;
+    }
+    
+    .about-content h2{
+        font-size: 41px;
+        color: #333333;
+        font-weight: 700;
+        margin: 0 0 25px;
+    }
+    
+    .about-img-mision{
+        position: relative;
+        top: 10%;
+        left: 90%;
+        
+        
+    }
+
+    .about-content-vision{
+        position: relative; 
+        left: -0%;
+    }
+}
+    
+@media(min-width:1280px){
+    .about-content{
+        color: #000;
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: 80px;
+    }
+    
+   
+}
