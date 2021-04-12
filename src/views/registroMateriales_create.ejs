@@ -37,10 +37,10 @@
                             <a class="nav-link disabled" aria-current="page" href="usuarios">Usuarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="productos">Materiales</a>
+                            <a class="nav-link disabled" href="/productos">Materiales</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="registroMateriales">Registro de Materiales</a>
+                            <a class="nav-link active select" href="registroMateriales">Registro de Materiales</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" href="clientes">Clientes</a>
@@ -49,7 +49,7 @@
                             <a class="nav-link disabled" href="ventas">Ventas</a>
                         </li>-->
                         <li class="nav-item">
-                            <a class="nav-link active select" href="/presupuestos">Presupuetos</a>
+                            <a class="nav-link disabled" href="presupuestos">Presupuetos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" href="proveedores">Proveedores</a>
@@ -64,46 +64,34 @@
         <div class="card border-primary">
             <div class="card-header">Nuevo Registro</div>
             <div class="card-body">
-                <form action="/presupuestos/add" method="POST">
+                <form action="/registroMateriales/add" method="POST">
                     <div class="mb-3">
-                        <label for="cliente" class="form-label">Cliente</label>
-                        <select  class="form-select" onchange="valorCliente()" id="cliente" name="cliente" tabindex="1" required>
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <select  class="form-select" id="nombre" name="nombre" tabindex="1" required>
                             <option>----</option>
                             <%for(var i=0; i < datos.length; i++){%>
-                                <option value="<%= datos[i].nombre %>"><%= datos[i].nombre %></option>
+                                <option value="<%= datos[i].descripcion %>"><%= datos[i].descripcion %></option>
 		  	                <%}%>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="direccion" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" id="direccion" name="direccion" tabindex="2" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="text" class="form-control" placeholder="Ejemplo:04248975412" id="telefono" name="telefono" tabindex="3" required pattern="[0-9]{1,20}"
-                        title="No se permiten letras, caracteres especiales o espacios, solo números.">
-                    </div>
-                    <div class="mb-3">
-                        <label for="emision" class="form-label">Fecha de Emisión</label>
-                        <input type="date" class="form-control" placeholder="dd / mm / aaaa" id="emision" name="emision" tabindex="4" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="descripcion" class="form-label">Descripción</label>
-                        <input type="text" class="form-control" id="descripcion" name="descripcion" tabindex="5" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="total" class="form-label">Total</label>
-                        <input type="text" class="form-control" id="total" name="total" tabindex="6" required>
-                        <small>Ingrese los decimales con un "." hasta un maximo de dos (2) decimales.</small>
-                    </div>
-                    <label for="estatus" class="form-label">Estatus</label>
-                        <select class="form-select" id="estatus" name="estatus" tabindex="7" required>
+                        <label for="estatus" class="form-label">Entrada/Salida</label>
+                        <select class="form-select" id="estatus" name="estatus" tabindex="2" required>
                             <option>----</option>
-                            <option value="Activo">Activo</option>
-                            <option value="Inactivo">Inactivo</option>
+                            <option value="Entrada">Entrada</option>
+                            <option value="Salida">Salida</option>
                         </select>
-                    <button type="submit" class="btn btn-success" tabindex="8" title="Guarda el presupuesto creado.">Guardar</button>
-                    <a href="/presupuestos" class="btn btn-danger">Cancelar</a>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cantidad" class="form-label">Cantidad</label>
+                        <input type="number" class="form-control" id="cantidad" name="cantidad" tabindex="3" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="fecha" name="fecha" tabindex="4">
+                    </div>
+                    <button type="submit" class="btn btn-success" tabindex="7" title="Guarda el producto creado.">Guardar</button>
+                    <a href="/registroMateriales" class="btn btn-danger">Cancelar</a>
                 </form>
             </div>
         </div>
@@ -134,22 +122,21 @@
     <script type="text/javascript" src="../javascripts/mdbootstrap/mdb.min.js"></script>
     <!-- MDB-KIT Javascript-->
     <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
-
-    <script>
-        var global = <%- JSON.stringify(datos) %>;
-        function valorCliente(){
-            var cliente = document.getElementById("cliente").value;
-            clientObject = global.find(c => c.nombre == cliente)
-            console.log(clientObject);
-            if (cliente) {
-                document.getElementById("direccion").value = clientObject.direccion
-                document.getElementById("telefono").value = clientObject.telefono
-                
-            }
-
-        }
-    </script>
  
+    <script>
+        function changeValueOfRemanente() {
+            var entrada = document.getElementById("entrada").value;
+            var salida = document.getElementById("salida").value;
+            var remanente = entrada - salida;
+            if (remanente <= 0) {
+               remanente = 0;
+            }else {
+                remanente;
+            }
+            document.getElementById("remanente").value = remanente;
+       };
+   </script>
+
   </body>
  </html>
  

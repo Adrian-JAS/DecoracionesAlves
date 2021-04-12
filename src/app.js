@@ -19,6 +19,7 @@ var clientesRouter = require('./routes/clientes');
 var ventasRouter = require('./routes/ventas');
 var presupuestosRouter = require('./routes/presupuestos');
 var proveedoresRouter = require('./routes/proveedores');
+var registroMateriales = require('./routes/registroMateriales');
 
 
 var app = express();
@@ -59,6 +60,7 @@ app.use('/clientes', clientesRouter);
 app.use('/ventas', ventasRouter);
 app.use('/presupuestos', presupuestosRouter);
 app.use('/proveedores', proveedoresRouter);
+app.use('/registroMateriales', registroMateriales);
 
 
 
